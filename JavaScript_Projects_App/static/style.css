@@ -1,0 +1,26 @@
+
+
+
+#colorPicker{
+    height: 32px;
+    width: 250px;
+    border: none;
+}
+
+.notification {
+  display: none;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 2px ;
+  border-radius: 4px;
+  position: absolute;
+  /*top: 500px; !* Adjust based on your layout *!*/
+  /*left: 50%; !* Center the notification *!*/
+  /*transform: translateX(-50%);*/
+  /*z-index: 1000; !* Ensure it appears above other elements *!*/
+}
+
+
+#simpleList li{
+    list-style-type: upper-roman;
+}
