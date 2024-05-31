@@ -1,31 +1,9 @@
-// const buttons = document.querySelectorAll('.btn');
-// const body = document.querySelector('body');
-//
-// console.log(buttons);
-// buttons.forEach(function (button) {
-//
-//     button.addEventListener('click', function (event) {
-//         event.preventDefault();
-//         // console.log(button);
-//
-//         if (event.target.id === 'red') {
-//             body.style.backgroundColor = 'red';
-//             body.style.color = 'white';
-//         }
-//         if (event.target.id === 'green') {
-//             body.style.backgroundColor = 'green';
-//             body.style.color = 'white';
-//         }
-//         if (event.target.id === 'blue') {
-//             body.style.backgroundColor = 'blue';
-//             body.style.color = 'red';
-//         }
-//
-//     })
-// })
+
+// experiment code
+
+const bg_body = document.querySelector('#bg_body');
 
 
-// ------------------------------------------------
 
 const colorsForm = document.querySelector('#colorsForm')
 // FOR BOOTSTRAP STYLING.
@@ -38,8 +16,8 @@ userInput.classList.add('form-control', 'mt-3');
 // FOR INPUT TEXT COLOR
 const userTextInput = document.querySelector('#userTextInput')
 userTextInput.classList.add('form-control');
-
-const bg_Div = document.querySelector('#bg_Div')
+//new code;
+const bg_Div = document.querySelectorAll('#bg_Div')
 
 colorsForm.addEventListener('submit', function (e) {
     e.preventDefault();
@@ -50,10 +28,17 @@ colorsForm.addEventListener('submit', function (e) {
 
 
     if (userInput && userTextInput === '' || !isNaN(userInput)) {
-        forErrors.innerHTML = 'Empty strings & numbers are not allowed';
+        forErrors.innerHTML = 'INVALID INPUT';
     } else {
         forErrors.innerHTML = '';
-        bg_Div.style.backgroundColor = userInput;
+        // bg_Div.style.backgroundColor = userInput;
+
+        // new code
+        bg_Div.forEach(function (Background_Divs, index) {
+            Background_Divs.style.backgroundColor = userInput;
+        })
+
+
         headings.forEach(heading => {
             heading.style.color = userTextInput
         })
@@ -69,15 +54,16 @@ const color_Code = document.querySelector('#color_Code');
 
 const copiedMessage = document.querySelector('#notification');
 
+const pasteButton1 = document.querySelector('#pasteButton1');
+const pasteButton2 = document.querySelector('#pasteButton2');
 
-
-
-
+// TO SIMPLY SHOW THE VALUE OF COLOR INTO A P TAG USNG innerHTML;
 colorPicker.addEventListener('input', function (e) {
     color_Code.innerHTML = selectedColor.value;
 
 })
 
+// COPY FUNCTION
 color_Code.addEventListener('click', function (e) {
 
     const range = document.createRange();
@@ -96,4 +82,48 @@ color_Code.addEventListener('click', function (e) {
     }, 1500);
 
 })
+
+
+// PASTE FUNCTION for bg color
+pasteButton1.addEventListener('click', function (e) {
+       navigator.clipboard.readText()
+        .then((color) => {
+            // Check if the clipboard content is a valid color
+            if (/^#[0-9A-F]{6}$/i.test(color)) {
+                // Paste the color value into the input field
+                userInput.value = color;
+            } else {
+                // If the clipboard content is not a valid color, notify the user
+                alert('Clipboard does not contain a valid color value.');
+            }
+        })
+        .catch((error) => {
+            // Handle errors
+            console.error('Failed to read clipboard contents: ', error);
+            alert('Failed to read clipboard contents.');
+        });
+})
+
+// PASTE BUTTON FOR TEXT COLOR
+pasteButton2.addEventListener('click', function (e) {
+       navigator.clipboard.readText()
+        .then((color) => {
+            // Check if the clipboard content is a valid color
+            if (/^#[0-9A-F]{6}$/i.test(color)) {
+                // Paste the color value into the input field
+                userTextInput.value = color;
+            } else {
+                // If the clipboard content is not a valid color, notify the user
+                alert('Clipboard does not contain a valid color value.');
+            }
+        })
+        .catch((error) => {
+            // Handle errors
+            console.error('Failed to read clipboard contents: ', error);
+            alert('Failed to read clipboard contents.');
+        });
+})
+
+
+
 

@@ -3,8 +3,9 @@
 
 #colorPicker{
     height: 32px;
-    width: 250px;
+    width: 500px;
     border: none;
+    /*border-radius: 50px;*/
 }
 
 .notification {
@@ -15,7 +16,7 @@
   border-radius: 4px;
   position: absolute;
   /*top: 500px; !* Adjust based on your layout *!*/
-  /*left: 50%; !* Center the notification *!*/
+  left: 70%; /* Center the notification */
   /*transform: translateX(-50%);*/
   /*z-index: 1000; !* Ensure it appears above other elements *!*/
 }
@@ -23,4 +24,12 @@
 
 #simpleList li{
     list-style-type: upper-roman;
+}
+
+.sample{
+
+    height: 500px;
+    width: 500px;
+    border: 2px solid black;
+
 }

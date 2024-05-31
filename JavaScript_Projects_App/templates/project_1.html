@@ -12,65 +12,68 @@
     {# bootstrap icons cdn#}
     <link rel = "stylesheet" href = "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
-
+    {# FAV ICON #}
+    <link rel = "icon" type = "image/x-icon" href = " /media/logo.png">
+    {# CUSTOM CSS FILE LINKING #}
     <link rel = "stylesheet" href = "{% static 'style.css' %}">
 
-    {#  -----  #}
+    {#  --GOOGLE FONTS ---  #}
     <link rel = "preconnect" href = "https://fonts.googleapis.com">
     <link rel = "preconnect" href = "https://fonts.gstatic.com" crossorigin>
     <link href = "https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel = "stylesheet">
 
 </head>
-<body>
+<body id="bg_body">
 
 {# HEADER #}
 {% block header %}
     {% include 'header.html' %}
 {% endblock %}
 
-<h1 class = "display-5  text-uppercase text-center">Project 1 changing color of body & Text using user input</h1>
+<p class = " lead text-center my-5">VISIBL LET YOU VIEW ELEMETS THAT ARE IMPORTANT FOR DESIGNING BY ALLOWING YOU TO ADD/UPDATE BG & TEXTCOLOR.</p>
 
-<div class = "container my-5">
+<div class = "container-fluid my-5">
 
     <form id = "colorsForm">
 
-        {# BACKGROUND COLOR  #}
-        <div>
-            <label for = "userBgInput">Background Color:</label>
+        {#         BACKGROUND COLOR#}
+        <label for = "userBgInput">Background Color:</label>
+        <div class = "input-group">
             <input type = "text" id = "userBgInput" placeholder = "Enter Background color!">
+            <span class = "input-group-text" id = "pasteButton1"> Paste </span>
         </div>
 
+
+        <label class = "my-3" for = "userTextInput">Text Color:</label>
         {# TEXT COLOR  #}
-        <div>
-            <label for = "userTextInput" style = "margin-top: 16px; ">Text Color:</label>
+        <div class = "input-group ">
             <input type = "text" id = "userTextInput" placeholder = "Enter Text color!">
+            <span class = "input-group-text" id = "pasteButton2"> Paste </span>
         </div>
 
         {# COLOR PICKER  #}
-        <div class = "d-flex justify-content-evenly align-content-center my-4">
-            <label for = "colorPicker">Open Color Pallet:</label>
+        <div class = "d-flex justify-content-between align-content-center my-5">
+            <label for = "colorPicker">Color Pallet: </label>
             <input type = "color" id = "colorPicker">
-            <p id = "color_Code"></p>
+            <p id = "color_Code">CLICK TO COPY THE COLOR CODE VALUE</p>
 
             <div id = "notification" class = "notification">Text copied!</div>
 
         </div>
 
-        <div>
+        <div class = "text-center">
             <p id = "forErrors"></p>
-            <button id = "userSubmit" class = "btn-lg d-block">submit</button>
+            <button id = "userSubmit" class = "btn">submit</button>
         </div>
 
     </form>
 </div>
 
 
-{#<span class = "input-group-text"><span><input id="colorPicker" type = "color"></span></span>#}
-
 <div class = "container-fluid border border-1 rounded" id = "bg_Div">
     <div class = "row">
 
-        <div class = "col p-5  border-end border-1 border-secondary ">
+        <div class = "col p-5  border-end border-1 border-secondary  text-center ">
             <p class = "display-6" id = "headings">ALL HTML HEADINGS TAGS</p>
             <p class = "h1" id = "headings">THIS IS HEADING 1 </p>
             <p class = "h2" id = "headings">THIS IS HEADING 2</p>
@@ -80,10 +83,58 @@
             <p class = "h6" id = "headings">THIS IS HEADING 6</p>
         </div>
 
-        <div class = "col p-5 border-end border-1 border-secondary">
+        <div class = "col p-5 border-end border-1 border-secondary  text-center">
             <p id = "headings" class = "display-5">PARAGRAPH </p>
             <p id = "headings">Success is the accomplishment of an aim or purpose, often perceived as a pinnacle of one's efforts, talents, and perseverance. For celebrated writer Maya Angelou, success is not simply about material wealth or
                                recognition but about enjoying the process of striving for one's goals. She eloquently captures this sentiment, saying, "Success is liking yourself, liking what you do, and liking how you do it."</p>
+        </div>
+
+        <div class = "col p-5 ">
+            <p id = "headings" class = "display-5"> LISTS </p>
+            <ul>
+                <li id = "headings">DJANGO</li>
+                <li id = "headings">JAVASCRIPT</li>
+            </ul>
+
+            <ol>
+                <li id = "headings">DJANGO</li>
+                <li id = "headings">JAVASCRIPT</li>
+            </ol>
+
+            <ol id = "simpleList">
+                <li id = "headings">DJANGO</li>
+                <li id = "headings">JAVASCRIPT</li>
+            </ol>
+        </div>
+
+    </div>
+</div>
+
+<div class = "container-fluid border border-1 rounded" id = "bg_Div">
+   <div class = "row">
+
+        <div class = "col p-5  border-end border-1 border-secondary text-center ">
+            <p class = "display-6" id = "headings">BOOTSTRAP DISPLAY CLASES</p>
+            <p class = "display-1" id = "headings">DISPLAY 1 </p>
+            <p class = "display-2" id = "headings">DISPLAY 2 </p>
+            <p class = "display-3" id = "headings">DISPLAY 3 </p>
+            <p class = "display-4" id = "headings">DISPLAY 4 </p>
+            <p class = "display-5" id = "headings">DISPLAY 5 </p>
+            <p class = "display-6" id = "headings">DISPLAY 6 </p>
+
+        </div>
+
+        <div class = "col p-5 border-end border-1 border-secondary text-center">
+            <p id = "headings" class = "display-5"> BOOTSTRAP CARDS </p>
+            <div class = "card" >
+                <img src = "https://images.unsplash.com/photo-1511556532299-8f662fc26c06?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class = "card-img-top img-fluid" alt = "...">
+                <div class = "card-body text-center" id="bg_Div">
+                    <h6 class = "card-title " id="headings">Nike Air Max 2k15</h6>
+                    <hp class = "card-text lead" id="headings">Nike Air Max is the ultimate tool for those who want to play like pros!</hp>
+
+                </div>
+                <a href="#" class="btn rounded border-warning border-1 " ><span id="headings" class="h4">BuyNow</span></a>
+            </div>
         </div>
 
         <div class = "col p-5">
@@ -98,16 +149,16 @@
                 <li id = "headings">JAVASCRIPT</li>
             </ol>
 
-            <ol id="simpleList">
+            <ol id = "simpleList">
                 <li id = "headings">DJANGO</li>
                 <li id = "headings">JAVASCRIPT</li>
             </ol>
-
-
         </div>
 
-
     </div>
+</div>
+
+
 
 
 </div>
