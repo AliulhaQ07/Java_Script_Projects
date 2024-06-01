@@ -1,0 +1,135 @@
+{% load static %}
+<!doctype html>
+<html lang = "en" >
+<head >
+    <meta charset = "utf-8" >
+    <meta name = "viewport"
+          content = "width=device-width, user-scalable=no, initial-scale=1" >
+    <meta http-equiv = "X-UA-Compatible" content = "ie=edge" >
+    <title >BMI CALCULATOR</title >
+    <link rel = "stylesheet" href = "https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+          integrity = "sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin = "anonymous" >
+    {# bootstrap icons cdn#}
+    <link rel = "stylesheet" href = "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" >
+    {# custom css files #}
+    {# FAV ICON #}
+    <link rel = "icon" type = "image/x-icon" href = " /media/logo.png" >
+    
+    
+    <link rel = "stylesheet" href = "{% static 'bmi_calculator.css' %}" >
+    
+    {#  -----  #}
+    <link rel = "preconnect" href = "https://fonts.googleapis.com" >
+    <link rel = "preconnect" href = "https://fonts.gstatic.com" crossorigin >
+    <link href = "https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel = "stylesheet" >
+
+</head >
+<body >
+{# HEADER #}
+{% block header %}
+    {% include 'header.html' %}
+{% endblock %}
+
+<section class = "container" >
+    <form id = "bmi_Form" >
+        <p class = "display-6 mt-3 text-center" >BODY MASS INDEX CALCULTOR BY USER INPUT</p >
+        
+        <div >
+            <label for = "height" class = "form-label" >Enter Height: </label >
+            <input type = "text" id = "height" class = "form-control" placeholder = "Enter Height in feet" >
+        </div >
+
+        <div >
+            <label for = "weight" class = "form-label" >Enter Weight: </label >
+            <input type = "text" id = "weight" class = "form-control" placeholder = "Enter Weight in Kilograms" >
+        </div >
+
+
+        <button class = "btn btn-dark my-3" >CALCULATE BMI</button >
+
+        <div class = "bg-dark text-white p-2 rounded mb-3 " >
+            <p class = "lead" >BODY MASS INDEX IS : <span id = "bmi_Result" ></span ></p >
+            <p class = "lead" >Classification : <span id = "bmi_Weight" ></span ></p >
+        </div >
+    
+    </form >
+</section >
+
+<section class = "bg-light" >
+    <div class = "container-fluid mx-5" >
+        <div class = "row justify-content-evenly align-items-stretch " >
+            <div class = "col py-5 d-flex flex-column " >
+                <p class = "h3 mb-3" >BMI introduction</p >
+                <p class = "text-muted" >
+                    BMI is a measurement of a person's leanness or corpulence based on their height and weight, and is intended to quantify tissue mass. It is widely used as a general indicator of whether a person has a healthy body weight for their height. Specifically, the value obtained from the calculation of BMI is used to categorize whether a person is underweight, normal weight, overweight, or obese depending on what range the value falls between. These ranges of BMI vary based on factors
+                    such as region and age, and are sometimes further divided into subcategories such as severely underweight or very severely obese. Being overweight or underweight can have significant health effects, so while BMI is an imperfect measure of healthy body weight, it is a useful indicator of whether any additional testing or action is required. Refer to the table below to see the different categories based on BMI that are used by the calculator.
+                </p >
+            </div >
+
+            <div class = "col py-5 d-flex flex-column " >
+                <p class = "h3 mb-3" >BMI table for adults</p >
+                <p class = "text-muted" >
+                    This is the World Health Organization's (WHO) recommended body weight based on BMI values for adults.
+                </p >
+                <table class = "table" >
+                    <thead >
+                    <tr >
+                        <th >Classification</th >
+                        <th >BMI range - Kg/m^2</th >
+                    </tr >
+                    </thead >
+                    <tbody >
+                    <tr >
+                        <th >Severe Thinness</th >
+                        <th >< 16</th >
+                    </tr >
+                    <tr >
+                        <th >Moderate Thinness</th >
+                        <th >16 - 17</th >
+                    </tr >
+                    <tr >
+                        <th >Mild Thinness</th >
+                        <th >17 - 18.5</th >
+                    </tr >
+                    <tr >
+                        <th >Normal</th >
+                        <th >18.5 - 25</th >
+                    </tr >
+                    <tr >
+                        <th >Overweight</th >
+                        <th >25 - 30</th >
+                    </tr >
+                    <tr >
+                        <th >Obese Class I</th >
+                        <th >30 - 35</th >
+                    </tr >
+                    <tr >
+                        <th >Obese Class II</th >
+                        <th >35 - 40</th >
+                    </tr >
+                    <tr >
+                        <th >Obese Class III</th >
+                        <th >> 40</th >
+                    </tr >
+                    </tbody >
+                </table >
+            </div >
+
+
+            <div class = "col py-5 d-flex flex-column " >
+                <p class = "h3 mb-3" >BMI Chart</p >
+                <img src = "/media/bmi-chart.png" alt = "bmi-Chart" height = "450px"
+                     width = "450px" >
+
+            </div >
+
+
+        </div >
+    </div >
+</section >
+
+
+<script src = "{% static 'javascript_files/bmi_calculator.js' %}" ></script >
+<script src = "https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity = "sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin = "anonymous" ></script >
+</body >
+</html >
