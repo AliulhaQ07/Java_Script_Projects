@@ -1,170 +1,229 @@
 {% load static %}
 <!doctype html>
-<html lang = "en">
-<head>
-    <meta charset = "utf-8">
+<html lang = "en" >
+<head >
+    <meta charset = "utf-8" >
     <meta name = "viewport"
-          content = "width=device-width, user-scalable=no, initial-scale=1">
-    <meta http-equiv = "X-UA-Compatible" content = "ie=edge">
-    <title>Visibl</title>
+          content = "width=device-width, user-scalable=no, initial-scale=1" >
+    <meta http-equiv = "X-UA-Compatible" content = "ie=edge" >
+    <title >Visibl</title >
     <link rel = "stylesheet" href = "https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-          integrity = "sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin = "anonymous">
+          integrity = "sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin = "anonymous" >
     {# bootstrap icons cdn#}
-    <link rel = "stylesheet" href = "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel = "stylesheet" href = "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" >
 
     {# FAV ICON #}
-    <link rel = "icon" type = "image/x-icon" href = " /media/logo.png">
+    <link rel = "icon" type = "image/x-icon" href = " /media/logo.png" >
     {# CUSTOM CSS FILE LINKING #}
-    <link rel = "stylesheet" href = "{% static 'style.css' %}">
+    <link rel = "stylesheet" href = "{% static 'style.css' %}" >
 
     {#  --GOOGLE FONTS ---  #}
-    <link rel = "preconnect" href = "https://fonts.googleapis.com">
-    <link rel = "preconnect" href = "https://fonts.gstatic.com" crossorigin>
-    <link href = "https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel = "stylesheet">
+    <link rel = "preconnect" href = "https://fonts.googleapis.com" >
+    <link rel = "preconnect" href = "https://fonts.gstatic.com" crossorigin >
+    <link href = "https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel = "stylesheet" >
 
-</head>
-<body id="bg_body">
+</head >
+<body class = "bg-light" >
 
 {# HEADER #}
 {% block header %}
     {% include 'header.html' %}
 {% endblock %}
 
-<p class = " lead text-center my-5">VISIBL LET YOU VIEW ELEMETS THAT ARE IMPORTANT FOR DESIGNING BY ALLOWING YOU TO ADD/UPDATE BG & TEXTCOLOR.</p>
+<p class = " h5 fw-medium text-center my-5" >VISIBL LET YOU VIEW ELEMETS THAT ARE IMPORTANT FOR DESIGNING BY ALLOWING YOU TO ADD/UPDATE BG & TEXTCOLOR.</p >
 
-<div class = "container-fluid my-5">
+<div class = "container my-5 " >
 
-    <form id = "colorsForm">
+    <form id = "colorsForm" >
 
         {#         BACKGROUND COLOR#}
-        <label for = "userBgInput">Background Color:</label>
-        <div class = "input-group">
-            <input type = "text" id = "userBgInput" placeholder = "Enter Background color!">
-            <span class = "input-group-text" id = "pasteButton1"> Paste </span>
-        </div>
+        <label for = "userBgInput" >Background Color:</label >
+        <div class = "input-group" >
+            <input type = "text" id = "userBgInput" placeholder = "Enter Background color!" >
+            <span class = "input-group-text" id = "pasteButton1" > Paste </span >
+        </div >
 
 
-        <label class = "my-3" for = "userTextInput">Text Color:</label>
+        <label class = "mt-3" for = "userTextInput" >Text Color:</label >
         {# TEXT COLOR  #}
-        <div class = "input-group ">
-            <input type = "text" id = "userTextInput" placeholder = "Enter Text color!">
-            <span class = "input-group-text" id = "pasteButton2"> Paste </span>
-        </div>
+        <div class = "input-group " >
+            <input type = "text" id = "userTextInput" placeholder = "Enter Text color!" >
+            <span class = "input-group-text" id = "pasteButton2" > Paste </span >
+        </div >
 
         {# COLOR PICKER  #}
-        <div class = "d-flex justify-content-between align-content-center my-5">
-            <label for = "colorPicker">Color Pallet: </label>
-            <input type = "color" id = "colorPicker">
-            <p id = "color_Code">CLICK TO COPY THE COLOR CODE VALUE</p>
+        <div class = "d-flex justify-content-between align-content-center my-5" >
+            <label for = "colorPicker" >Color Pallet: </label >
+            <input type = "color" id = "colorPicker" >
+            <p id = "color_Code" >CLICK TO COPY</p >
 
-            <div id = "notification" class = "notification">Text copied!</div>
+            <div id = "notification" class = "notification" >Text copied!</div >
 
-        </div>
+        </div >
 
-        <div class = "text-center">
-            <p id = "forErrors"></p>
-            <button id = "userSubmit" class = "btn">submit</button>
-        </div>
+        <div class = "text-center" >
+            <p id = "forErrors" ></p >
+            <button id = "userSubmit" class = "btn" >submit</button >
+        </div >
 
-    </form>
+    </form >
+</div >
+
+
+<div class = "container border border-1 rounded " id = "bg_Div" >
+    <div class = "row" >
+
+        <div class = "col p-5  border-end border-1 border-secondary   " >
+            <p class = " fw-medium" id = "headings" >ALL HTML HEADINGS TAGS</p >
+            <p class = "h1" id = "headings" >THIS IS HEADING 1 </p >
+            <p class = "h2" id = "headings" >THIS IS HEADING 2</p >
+            <p class = "h3" id = "headings" >THIS IS HEADING 3</p >
+            <p class = "h4" id = "headings" >THIS IS HEADING 4</p >
+            <p class = "h5" id = "headings" >THIS IS HEADING 5</p >
+            <p class = "h6" id = "headings" >THIS IS HEADING 6</p >
+        </div >
+
+        <div class = "col p-5 border-end border-1 border-secondary" >
+            <p id = "headings" class = "fw-medium" >PARAGRAPH </p >
+            <p id = "headings" >Success is the accomplishment of an aim or purpose, often perceived as a pinnacle of one's efforts, talents, and perseverance. For celebrated writer Maya Angelou, success is not simply about material wealth or
+                                recognition but about enjoying the process of striving for one's goals. She eloquently captures this sentiment, saying, "Success is liking yourself, liking what you do, and liking how you do it."</p >
+        </div >
+
+        <div class = "col p-5 " >
+            <p id = "headings" class = "fw-medium" > LISTS </p >
+            <ul >
+                <li id = "headings" >DJANGO</li >
+                <li id = "headings" >JAVASCRIPT</li >
+            </ul >
+
+            <ol >
+                <li id = "headings" >DJANGO</li >
+                <li id = "headings" >JAVASCRIPT</li >
+            </ol >
+
+            <ol id = "simpleList" >
+                <li id = "headings" >DJANGO</li >
+                <li id = "headings" >JAVASCRIPT</li >
+            </ol >
+        </div >
+
+    </div >
+</div >
+
+<div class = "container border border-1 rounded " id = "bg_Div" >
+    <div class = "row" >
+
+        <div class = "col p-5  border-end border-1 border-secondary  " >
+            <p class = "fw-medium" id = "headings" >BOOTSTRAP DISPLAY CLASES</p >
+            <p class = "display-1" id = "headings" >DISPLAY 1 </p >
+            <p class = "display-2" id = "headings" >DISPLAY 2 </p >
+            <p class = "display-3" id = "headings" >DISPLAY 3 </p >
+            <p class = "display-4" id = "headings" >DISPLAY 4 </p >
+            <p class = "display-5" id = "headings" >DISPLAY 5 </p >
+            <p class = "display-6" id = "headings" >DISPLAY 6 </p >
+
+        </div >
+
+        <div class = "col p-5 border-end border-1 border-secondary " >
+            <p id = "headings" class = "fw-medium" > BOOTSTRAP CARDS </p >
+            <div class = "card border border-secondary" >
+                <img src = "https://images.unsplash.com/photo-1542219550-37153d387c27?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class = "card-img-top img-fluid" alt = "..." >
+                <div class = "card-body " id = "bg_Div" >
+                    <h6 class = "card-title text-center " id = "headings" >Nike Air Max</h6 >
+                    <hp class = "card-text " id = "headings" >Nike Air Max is the ultimate tool for those who want to play like pros!</hp >
+
+                </div >
+                <a href = "#" class = "btn btn-secondary  " id = "bg_Div" ><span id = "headings" class = "lead " >BuyNow</span ></a >
+            </div >
+        </div >
+
+        <div class = "col p-5" >
+            <p id = "headings" class = "fw-medium" > BOOTSTRAP TABLES </p >
+            <table class = "table table-sm table-bordered" >
+                <thead >
+                <tr id = "headings" >
+                    <th scope = "col" >#</th >
+                    <th scope = "col" >First</th >
+                    <th scope = "col" >Last</th >
+                    <th scope = "col" >Position</th >
+                </tr >
+                </thead >
+                <tbody >
+                <tr id = "headings" >
+                    <th scope = "row" >1</th >
+                    <td >Jhon</td >
+                    <td >Doe</td >
+                    <td >Software Eng</td >
+                </tr >
+                <tr id = "headings" >
+                    <th scope = "row" >2</th >
+                    <td >Jacob</td >
+                    <td >Thornton</td >
+                    <td >Web Developer</td >
+                </tr >
+
+                <tr id = "headings" >
+                    <th scope = "row" >3</th >
+                    <td >Alexa</td >
+                    <td >Chris</td >
+                    <td >Dev Ops</td >
+                </tr >
+
+
+                </tbody >
+            </table >
+
+            {#   ACCORDIANS   #}
+            <div >
+                <p id = "headings" class = "fw-medium" >BOOTSTRAP ACCORDIANS</p >
+
+                <div class = "accordion" id = "accordionExample" >
+
+                    <div class = "accordion-item" >
+                        <h4 class = "accordion-header" id = "headingTwo" >
+                            <button class = "accordion-button collapsed border border-bottom" type = "button" data-bs-toggle = "collapse" data-bs-target = "#collapseTwo" aria-expanded = "true" aria-controls = "collapseTwo" >
+                                JAVASCRIPT
+                            </button >
+                        </h4 >
+                        <div id = "collapseTwo" class = "accordion-collapse collapse show" aria-labelledby = "headingTwo" data-bs-parent = "#accordionExample" >
+                            <div class = "accordion-body " id = "bg_Div" >
+                                <div id = "headings" >
+                                    JavaScript is a versatile, high-level programming language commonly used to create interactive effects within web browsers. JavaScript enables dynamic content, allowing for real-time updates and interactive features. It is supported by all modern web browsers, making it essential for web development. You can enhance any website with custom JavaScript code or utilize popular libraries and frameworks.It's also worth noting that JavaScript is constantly evolving,
+                                    with new features and improvements added regularly.
+                                </div >
+                            </div >
+                        </div >
+                    </div >
+
+                    <div class = "accordion-item" >
+                        <h4 class = "accordion-header" id = "headingThree" >
+                            <button class = "accordion-button collapsed" type = "button" data-bs-toggle = "collapse" data-bs-target = "#collapseThree" aria-expanded = "false" aria-controls = "collapseThree" >
+                                DJANGO
+                            </button >
+                        </h4 >
+                        <div id = "collapseThree" class = "accordion-collapse collapse" aria-labelledby = "headingThree" data-bs-parent = "#accordionExample" >
+                            <div class = "accordion-body" id = "bg_Div" >
+                                <div id = "headings" >
+                                    Django is designed to make the web development process easier and faster by providing a high-level framework that includes many essential features. These features manage everything from routing to database interactions, using built-in tools that streamline the development process. It's also worth noting that Django supports just about any web development requirement, though its robust structure does encourage best practices and clean, maintainable code.
+                                </div >
+                            </div >
+                        </div >
+                    </div >
+
+
+                </div >
+            </div >
+
+        </div >
+
+    </div >
+</div >
+
+
 </div>
 
 
-<div class = "container-fluid border border-1 rounded" id = "bg_Div">
-    <div class = "row">
-
-        <div class = "col p-5  border-end border-1 border-secondary  text-center ">
-            <p class = "display-6" id = "headings">ALL HTML HEADINGS TAGS</p>
-            <p class = "h1" id = "headings">THIS IS HEADING 1 </p>
-            <p class = "h2" id = "headings">THIS IS HEADING 2</p>
-            <p class = "h3" id = "headings">THIS IS HEADING 3</p>
-            <p class = "h4" id = "headings">THIS IS HEADING 4</p>
-            <p class = "h5" id = "headings">THIS IS HEADING 5</p>
-            <p class = "h6" id = "headings">THIS IS HEADING 6</p>
-        </div>
-
-        <div class = "col p-5 border-end border-1 border-secondary  text-center">
-            <p id = "headings" class = "display-5">PARAGRAPH </p>
-            <p id = "headings">Success is the accomplishment of an aim or purpose, often perceived as a pinnacle of one's efforts, talents, and perseverance. For celebrated writer Maya Angelou, success is not simply about material wealth or
-                               recognition but about enjoying the process of striving for one's goals. She eloquently captures this sentiment, saying, "Success is liking yourself, liking what you do, and liking how you do it."</p>
-        </div>
-
-        <div class = "col p-5 ">
-            <p id = "headings" class = "display-5"> LISTS </p>
-            <ul>
-                <li id = "headings">DJANGO</li>
-                <li id = "headings">JAVASCRIPT</li>
-            </ul>
-
-            <ol>
-                <li id = "headings">DJANGO</li>
-                <li id = "headings">JAVASCRIPT</li>
-            </ol>
-
-            <ol id = "simpleList">
-                <li id = "headings">DJANGO</li>
-                <li id = "headings">JAVASCRIPT</li>
-            </ol>
-        </div>
-
-    </div>
-</div>
-
-<div class = "container-fluid border border-1 rounded" id = "bg_Div">
-   <div class = "row">
-
-        <div class = "col p-5  border-end border-1 border-secondary text-center ">
-            <p class = "display-6" id = "headings">BOOTSTRAP DISPLAY CLASES</p>
-            <p class = "display-1" id = "headings">DISPLAY 1 </p>
-            <p class = "display-2" id = "headings">DISPLAY 2 </p>
-            <p class = "display-3" id = "headings">DISPLAY 3 </p>
-            <p class = "display-4" id = "headings">DISPLAY 4 </p>
-            <p class = "display-5" id = "headings">DISPLAY 5 </p>
-            <p class = "display-6" id = "headings">DISPLAY 6 </p>
-
-        </div>
-
-        <div class = "col p-5 border-end border-1 border-secondary text-center">
-            <p id = "headings" class = "display-5"> BOOTSTRAP CARDS </p>
-            <div class = "card" >
-                <img src = "https://images.unsplash.com/photo-1511556532299-8f662fc26c06?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class = "card-img-top img-fluid" alt = "...">
-                <div class = "card-body text-center" id="bg_Div">
-                    <h6 class = "card-title " id="headings">Nike Air Max 2k15</h6>
-                    <hp class = "card-text lead" id="headings">Nike Air Max is the ultimate tool for those who want to play like pros!</hp>
-
-                </div>
-                <a href="#" class="btn rounded border-warning border-1 " ><span id="headings" class="h4">BuyNow</span></a>
-            </div>
-        </div>
-
-        <div class = "col p-5">
-            <p id = "headings" class = "display-5"> LISTS </p>
-            <ul>
-                <li id = "headings">DJANGO</li>
-                <li id = "headings">JAVASCRIPT</li>
-            </ul>
-
-            <ol>
-                <li id = "headings">DJANGO</li>
-                <li id = "headings">JAVASCRIPT</li>
-            </ol>
-
-            <ol id = "simpleList">
-                <li id = "headings">DJANGO</li>
-                <li id = "headings">JAVASCRIPT</li>
-            </ol>
-        </div>
-
-    </div>
-</div>
-
-
-
-
-</div>
-
-
-<script src = "{% static 'javascript_files/project1.js' %}"></script>
-<script src = "https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity = "sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin = "anonymous"></script>
-</body>
-</html>
+<script src = "{% static 'javascript_files/project1.js' %}" ></script >
+<script src = "https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity = "sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin = "anonymous" ></script >
+</body >
+</html >

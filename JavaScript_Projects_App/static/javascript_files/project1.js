@@ -1,17 +1,10 @@
-
-// experiment code
-
-const bg_body = document.querySelector('#bg_body');
-
-
-
 const colorsForm = document.querySelector('#colorsForm')
 // FOR BOOTSTRAP STYLING.
 const userSubmit = document.querySelector('#userSubmit')
 userSubmit.classList.add('btn', 'btn-primary');
 // FOR INPUT BG COLOR
 const userInput = document.querySelector('#userBgInput')
-userInput.classList.add('form-control', 'mt-3');
+userInput.classList.add('form-control');
 
 // FOR INPUT TEXT COLOR
 const userTextInput = document.querySelector('#userTextInput')
@@ -74,7 +67,7 @@ color_Code.addEventListener('click', function (e) {
 
     document.execCommand('copy');
 
-    window.getSelection().removeAllRanges();;
+    window.getSelection().removeAllRanges();
 
     notification.style.display = 'block';
     setTimeout(function() {
