@@ -12,3 +12,7 @@ def project1(request):
 
 def bmi_calculator(request):
     return render(request, "bmi_calculator.html")
+
+
+def pennywise(request):
+    return render(request, "pennywise.html")
