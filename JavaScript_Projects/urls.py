@@ -28,6 +28,7 @@ urlpatterns = (
         path("project1", views.project1, name="project1"),
         path("bmi_calculator", views.bmi_calculator, name="bmi_calculator"),
         path("pennywise", views.pennywise, name="pennywise"),
+        path("todoapp", views.todoapp, name="todoapp"),
     ]
     + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
     + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

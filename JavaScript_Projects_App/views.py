@@ -16,3 +16,7 @@ def bmi_calculator(request):
 
 def pennywise(request):
     return render(request, "pennywise.html")
+
+
+def todoapp(request):
+    return render(request, "todo_Web_App.html")
